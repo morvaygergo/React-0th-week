@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import button from "./button";
-import display from "./display";
+import button from "../components/button";
+import display from "../components/display";
 
 class App extends Component {
   state = {
@@ -18,6 +18,16 @@ class App extends Component {
       this.setState({ counter: --counter });
     }
   };
+
+  componentDidMount() {
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 38) {
+        this.incrementCounter();
+      } else if (e.keyCode === 40) {
+        this.decreaseCounter();
+      }
+    });
+  }
 
   render() {
     const { counter } = this.state;
