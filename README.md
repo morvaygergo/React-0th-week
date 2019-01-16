@@ -1,2 +1,2 @@
-# React-0th-week
+# react-0th-week
 Getting to know React
