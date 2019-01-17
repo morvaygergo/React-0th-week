@@ -7,20 +7,8 @@ class App extends Component {
     counter: 0
   };
 
-  incrementCounter = () => {
-    let { counter } = this.state;
-    this.setState({ counter: ++counter });
-  };
-
-  decreaseCounter = () => {
-    let { counter } = this.state;
-    if (counter > 0) {
-      this.setState({ counter: --counter });
-    }
-  };
-
   componentDidMount() {
-    document.addEventListener('keydown', e => {
+    document.addEventListener("keydown", e => {
       if (e.keyCode === 38) {
         this.incrementCounter();
       } else if (e.keyCode === 40) {
@@ -29,8 +17,20 @@ class App extends Component {
     });
   }
 
+  incrementCounter = () => {
+    const { counter } = this.state;
+    this.setState({ counter: counter + 1 });
+  };
+
+  decreaseCounter = () => {
+    const { counter } = this.state;
+    if (counter > 0) {
+      this.setState({ counter: counter - 1 });
+    }
+  };
+
   render() {
-    let { counter } = this.state;
+    const { counter } = this.state;
     return (
       <div>
         <Button clicked={this.incrementCounter} value="Buy one" />
