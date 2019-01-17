@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { buyAcorn } from '../actions/buyAcorn';
-import Button from '../../components/Button';
+import buyAcorn from '../actions/buyAcorn';
+import Button from '../components/Button';
 
 const mapStateToProps = (state) => {
   return {
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClick: () => {
+    clicked: () => {
       dispatch(buyAcorn(1));
     },
   };
