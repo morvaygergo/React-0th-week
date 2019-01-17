@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import button from "../components/button";
-import display from "../components/display";
+import Button from "./Button";
+import Display from "./Display";
 
 class App extends Component {
   state = {
@@ -8,12 +8,12 @@ class App extends Component {
   };
 
   incrementCounter = () => {
-    const { counter } = this.state;
+    let { counter } = this.state;
     this.setState({ counter: ++counter });
   };
 
   decreaseCounter = () => {
-    const { counter } = this.state;
+    let { counter } = this.state;
     if (counter > 0) {
       this.setState({ counter: --counter });
     }
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const { counter } = this.state;
+    let { counter } = this.state;
     return (
       <div>
         <Button clicked={this.incrementCounter} value="Buy one" />

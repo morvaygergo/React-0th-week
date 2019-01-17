@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const display = ({children}) => children;
+const Display = ({children}) => children;
 
-display.propTypes = {
+Display.propTypes = {
   children: PropTypes.element.isRequired
 }
 
-export default display;
+export default Display;
