@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => (
   <div>

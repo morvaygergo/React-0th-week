@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from "./Button";
 import DisplayStates from "./DisplayStates";
-import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class States extends Component {
   state = {
