@@ -6,9 +6,14 @@ import Store from "../src/Store";
 import { Provider } from "react-redux";
 
 const Redux = () => (
-  <Provider store={Store}>
-    <App />
-  </Provider>
+  <div>
+    <Provider store={Store}>
+      <App />
+    </Provider>
+    <Link to={`/simple/states`}>With States</Link>
+    <div />
+    <Link to={`/`}>Go Home</Link>
+  </div>
 );
 
 export default Redux;
