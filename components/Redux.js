@@ -1,18 +1,50 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import App from "../components/App";
-import Store from "../src/Store";
-import { Provider } from "react-redux";
+import { connect } from "react-redux";
+import BuyAcorn from "../containers/BuyAcorn";
+import EatAcorn from "../containers/EatAcorn";
+import DisplayAcorn from "../containers/DisplayAcorn";
+import eatAction from "../actions/eatAction";
+import buyAction from "../actions/buyAction";
 
-const Redux = () => (
-  <div>
-    <Provider store={Store}>
-      <App />
-    </Provider>
-    <Link to={`/simple/states`}>With States</Link>
-    <div />
-    <Link to={`/`}>Go Home</Link>
-  </div>
-);
+class Redux extends React.Component {
+  constructor() {
+    super();
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
 
-export default Redux;
+  handleKeyPress(e) {
+    if (e.keyCode === 40) {
+      this.props.eatAction(1);
+    } else if (e.keyCode === 38) {
+      this.props.buyAction(1);
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+  }
+
+  render() {
+    return (
+      <main>
+        <BuyAcorn />
+        <DisplayAcorn />
+        <EatAcorn />
+      </main>
+    );
+  }
+}
+
+const mapDispatchToProps = {
+  eatAction,
+  buyAction
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Redux);
