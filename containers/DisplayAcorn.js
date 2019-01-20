@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import Display from '../components/Display';
+import DisplayRedux from '../components/DisplayRedux';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     value: state.acornReducer.counter,
   }
 }
 
 const DisplayAcorn = connect(
-  mapStateToProps)(Display);
+  mapStateToProps)(DisplayRedux);
 
 export default DisplayAcorn;

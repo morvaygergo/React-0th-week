@@ -1,24 +1,24 @@
-import { connect } from 'react-redux';
-import eatAcorn from '../actions/eatAcorn';
-import Button from '../components/Button';
+import { connect } from "react-redux";
+import eatAction from "../actions/eatAction";
+import Button from "../components/Button";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
   return {
-    value: 'Eat one',
+    value: "Eat one"
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     clicked: () => {
-      dispatch(eatAcorn(1));
-    },
+      dispatch(eatAction(1));
+    }
   };
 };
 
 const EatAcorn = connect(
   mapStateToProps,
-  mapDispatchToProps,
+  mapDispatchToProps
 )(Button);
 
 export default EatAcorn;

@@ -1,6 +1,6 @@
-import { createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import combinedReducer from '../reducers/combinedReducer';
+import { createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import combinedReducer from "../reducers/combinedReducer";
 
 const Store = createStore(combinedReducer, composeWithDevTools());
 

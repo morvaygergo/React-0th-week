@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import acornReducer from './acornReducer';
+import { combineReducers } from "redux";
+import acornReducer from "./acornReducer";
 
 const combinedReducer = combineReducers({
-  acornReducer,
+  acornReducer
 });
 
 export default combinedReducer;
