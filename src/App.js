@@ -39,7 +39,12 @@ class App extends React.Component {
   }
 }
 
+const mapDispatchToProps = {
+  eatAction,
+  buyAction
+};
+
 export default connect(
   null,
-  { eatAction, buyAction }
+  mapDispatchToProps
 )(App);
