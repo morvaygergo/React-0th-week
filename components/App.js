@@ -9,12 +9,20 @@ class App extends Component {
 
   componentDidMount() {
     document.addEventListener("keydown", e => {
-      if (e.keyCode === 38) {
-        this.incrementCounter();
-      } else if (e.keyCode === 40) {
-        this.decreaseCounter();
-      }
+      this.handleKeyPress(e);
     });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress);
+  }
+
+  handleKeyPress(e) {
+    if (e.keyCode === 38) {
+      this.incrementCounter();
+    } else if (e.keyCode === 40) {
+      this.decreaseCounter();
+    }
   }
 
   incrementCounter = () => {
