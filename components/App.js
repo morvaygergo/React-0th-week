@@ -3,14 +3,17 @@ import Button from "./Button";
 import Display from "./Display";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  
   state = {
     counter: 0
   };
 
   componentDidMount() {
-    document.addEventListener("keydown", e => {
-      this.handleKeyPress(e);
-    });
+    document.addEventListener("keydown", this.handleKeyPress);
   }
 
   componentWillUnmount() {
