@@ -1,24 +1,21 @@
-import { connect } from 'react-redux';
-import buyAcorn from '../actions/buyAcorn';
-import Button from '../components/Button';
+import { connect } from "react-redux";
+import buyAction from "../actions/buyAction";
+import Button from "../components/Button";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = () => {
   return {
-    value: 'Buy one',
+    value: "Buy one"
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     clicked: () => {
-      dispatch(buyAcorn(1));
-    },
+      dispatch(buyAction(1));
+    }
   };
 };
 
-const BuyAcorn = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Button);
+const BuyAcorn = connect(mapStateToProps, mapDispatchToProps)(Button);
 
 export default BuyAcorn;
